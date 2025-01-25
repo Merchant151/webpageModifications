@@ -1,0 +1,13 @@
+{
+	"manifest_version":3,
+	"name": "Testing Conetent modification",
+	"description": "I am attempting to test modifying on page settings",
+	"version": "0.1.0",
+	"action":{
+	"default_popup": "index.html"},
+	"permissions": [
+		"storage",
+		"offscreen"
+	]
+
+}
