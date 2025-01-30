@@ -30,6 +30,7 @@ await chrome.scripting.registerContentScripts([
 ```
 
 Injection time (scripting.executeScript) -Triggered on command 
+```javascript
 await chrome.scritping.executeScript([
     {
         target: [{tabId: 5}],
@@ -37,3 +38,35 @@ await chrome.scritping.executeScript([
 
     }
 ]);
+
+```
+Content scripts have access to four key namespaces 
+
+chrome.runtime - used to com to other parts of the extension 
+chrome.storage - access settings and data 
+chrome.i18n - access language and localized messages 
+chrome.dom - do dom related operations 
+
+Content script injection time can be controled 
+
+The default time is Document idle (when the page is done loading)
+
+document start or document end are other options 
+
+This can be specified with the option run_at feild in the manifest or runAt in the register content scripts api 
+
+Running at document end will run before images are finnished loading but after the dom is loaded. 
+
+Document start will run before any other processes run and will allow you to modify javascript properties before any other system has had a chance to. 
+
+Content scripts can be injected into an Iframe (This could be useful for acessing other content such as ads)
+
+All_frames: true 
+match_origin_as_fallback : true 
+
+
+Chrome has built in security features. 
+
+Content security policy headers can be used to restrict content scripts from running. 
+These can be verified in dev tools. 
+
