@@ -83,3 +83,24 @@ Expensive work should be done in the background by sending commands to other par
 
 Docs at developer.chrome.com
 
+I have been thinking about all of the things I want to do for on this project.
+
+I am testing content script functionality. So I should be able to do all of the things content scripts can do. including 'read the details of a page'  make changes to them and pass information to back to the extension. 
+
+So this means I want to try.  
+
+web scraping 
+
+hiding content 
+
+filling forms... 
+
+Context menu maybe....
+
+Throwing alerts on the page... 
+
+At this point I don't know of a project I want that is all together. 
+
+I think for now I will take all of the text from the page Im on 
+
+and add it to the popup menu. 
