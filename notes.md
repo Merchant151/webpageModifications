@@ -70,3 +70,16 @@ Chrome has built in security features.
 Content security policy headers can be used to restrict content scripts from running. 
 These can be verified in dev tools. 
 
+to bypass content scripts secrity polices you man need to use a service worker to preform the work instead. 
+
+CROS restrctions also apply to content scripts. 
+
+Content scripts are injected into an 'isolated world' 
+you can change this by setting the world pram to MAIN 
+
+Limit the privledges given to content scritps.
+
+Expensive work should be done in the background by sending commands to other parts of the extension. 
+
+Docs at developer.chrome.com
+
