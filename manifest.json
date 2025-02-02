@@ -9,5 +9,11 @@
 		"storage",
 		"offscreen"
 	]
+	"Content_scripts: [
+		{
+			"matches":["*"],
+			"js": ["cotent-script.js"]
+		}
+	]"
 
 }
