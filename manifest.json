@@ -8,12 +8,12 @@
 	"permissions": [
 		"storage",
 		"offscreen"
-	]
-	"Content_scripts: [
+	],
+	"content_scripts": [
 		{
-			"matches":["*"],
-			"js": ["cotent-script.js"]
+			"matches":["https://*/"],
+			"js": ["content-script.js"]
 		}
-	]"
+	]
 
 }
