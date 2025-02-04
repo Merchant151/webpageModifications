@@ -9,3 +9,14 @@ async function testlog(){
 }
 console.log('Content-scripts.js starts here! Hello, world');
 testlog();
+// Create a button element
+const button = document.createElement("button");
+
+// Set the button's text content
+button.textContent = "Click me";
+
+// Set the button's ID
+button.id = "clickMe";
+
+// Append the button to the document body
+document.body.appendChild(button);
