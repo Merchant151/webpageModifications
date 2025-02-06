@@ -7,16 +7,22 @@ async function testlog(){
 		await new Promise(resolve => setTimeout(resolve, 2000));
 	}
 }
-console.log('Content-scripts.js starts here! Hello, world');
+console.log('Content-scripts.js starts here! ELEM TEST');
 testlog();
 // Create a button element
-const button = document.createElement("button");
+//const button = document.createElement("button");
 
 // Set the button's text content
-button.textContent = "Click me";
+//button.textContent = "Click me";
 
 // Set the button's ID
-button.id = "clickMe";
+//button.id = "clickMe";
 
 // Append the button to the document body
-document.body.appendChild(button);
+//document.body.appendChild(button);
+
+const getElemTest = document.body;
+
+console.log('testing get elm body');
+console.log('testing elm?: '+JSON.parse(getElemTest));
+
