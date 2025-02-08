@@ -17,6 +17,11 @@
 		{
 			"matches":["<all_urls>"],
 			"js": ["content-script.js"]
+		},
+		{
+			"matches":["https://www.google.com/"],
+			"js":["prefill.js"]
+		
 		}
 	]
 
