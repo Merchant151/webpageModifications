@@ -22,6 +22,11 @@
 			"matches":["https://www.google.com/"],
 			"js":["prefill.js"]
 		
+		},
+		{
+			"matches":["https://www.google.com/search*"],
+			"js":["getResults.js"]
+		
 		}
 	]
 
