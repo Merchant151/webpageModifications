@@ -7,3 +7,9 @@ const elmBucket = document.querySelectorAll('[jsaction="rcuQ6b:npT2md;PYDNKe:bLV
 console.log("Find getresults.js");
 console.log(elmBucket);
 console.log("end getresults.js");
+
+
+//There are a few things I want to do. 
+//basically save all results and then display them in the extension. 
+const results = elmBucket;//here I need to do some work to get the results saved.
+chrome.storage.local.set(data).then(()=> {console.log("saving search results to chrome store")});
