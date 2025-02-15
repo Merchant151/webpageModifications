@@ -24,3 +24,7 @@ async function read(){
 async function deletefunc(){
 	console.log('create storate clear later');
 };
+
+
+//main calls below funcs above
+read()
