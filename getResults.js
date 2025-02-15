@@ -12,4 +12,4 @@ console.log("end getresults.js");
 //There are a few things I want to do. 
 //basically save all results and then display them in the extension. 
 const results = elmBucket;//here I need to do some work to get the results saved.
-chrome.storage.local.set(data).then(()=> {console.log("saving search results to chrome store")});
+chrome.storage.local.set(results).then(()=> {console.log("saving search results to chrome store")});
