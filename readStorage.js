@@ -2,6 +2,7 @@ const clear = document.getElementById('clear');
 
 clear.addEventListener('click', function() {
 
+	chrome.storage.sync.clear();
 	console.log('do something');
 
 	});
