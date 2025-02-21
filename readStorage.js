@@ -16,10 +16,14 @@ async function read(){
 	
 	for (var store = 0;store < data_keys.length;store++){
 		console.log('item: '+store);
+		//I guess local storage only stores strings so this object has to be parsed as json 
 		//console.log(data_keys[store]);	
 		console.log(data[store]);
 		//get object properties
 		console.log(Object.keys(data[store]));
+
+		//trying to parse the stored object 
+		console.log(JSON.parse(data[store]));
 
 	}
 
