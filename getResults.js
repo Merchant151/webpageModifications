@@ -22,7 +22,11 @@ async function main(){
 
 //There are a few things I want to do. 
 //basically save all results and then display them in the extension. 
-const results = elmBucket;//here I need to do some work to get the results saved.
-chrome.storage.local.set(results).then(()=> {console.log("saving search results to chrome store")});
+const results = new Array(); //here I need to do some work to get the results saved.
+results[0] = resultText; 
+	console.log('outputing results after modifying')
+	console.log(results);
+	//trying isnert slightyly differently using key value pair 
+	chrome.storage.local.set({'test':results[0] }).then(()=> {console.log("saving search results to chrome store")});
 }
 main();

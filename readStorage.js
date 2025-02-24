@@ -3,6 +3,7 @@ const clear = document.getElementById('clear');
 clear.addEventListener('click', function() {
 
 	chrome.storage.sync.clear();
+	chrome.storage.local.clear();
 	console.log('do something');
 
 	});
@@ -23,7 +24,8 @@ async function read(){
 		console.log(Object.keys(data[store]));
 
 		//trying to parse the stored object 
-		console.log(JSON.parse(data[store]));
+		console.log(data[0])
+		//console.log(JSON.parse(data[store]));
 
 	}
 
