@@ -4,8 +4,7 @@ clear.addEventListener('click', function() {
 
 	chrome.storage.sync.clear();
 	chrome.storage.local.clear();
-	console.log('do something');
-
+	read();
 	});
 
 
@@ -19,15 +18,23 @@ async function read(){
 		console.log('item: '+store);
 		//I guess local storage only stores strings so this object has to be parsed as json 
 		//console.log(data_keys[store]);	
-		console.log(data[store]);
-		//get object properties
-		console.log(Object.keys(data[store]));
+		//console.log(data[store]);
+		//get object properties This looks to be 
+		//console.log(Object.keys(data[data_keys[store]])); this line is getting the keys of a string and is essentially useless will del soon
+		console.log(data[data_keys[store]]); 
+
+
 
 		//trying to parse the stored object 
-		console.log(data[0])
+		//console.log(data[0])
 		//console.log(JSON.parse(data[store]));
 
-	}
+	};
+	//outside loop
+	console.log('outside loop');
+	console.log(data['test']);
+	//console.log(object.Keys(data[0]));
+	//console.log(data[0]['test']);
 
 };
 
