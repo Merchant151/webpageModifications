@@ -12,23 +12,11 @@ async function main(){
 	console.log("Find getresults.js");
 	console.log(elmBucket);/// This returns a node list 
 
-	console.log(elmBucket[0]);
-	//console.log(elmBucket[0].getHTML());
-	//console.log(elmBucket[0].getHTML()[10]);//This gets string at index 10 after converting all html to string
-	//console.log(elmBucket[0].item(0));//Get htmlcollection inside of htmlcollection :)
-	//console.log(elmBucket[0].item(0).item(0));
-	//item method not working. 
-	//testing item method trying to get live html collection so I don't have to string prase 
-	//  so I am trying to determine the type of elmBucket items 
-	console.log(typeof elmBucket);//object
-	console.log(typeof elmBucket[0]);//object
-	//console.log(typeof elmBucket[0].item());
-	console.log(typeof elmBucket.item(0));//object
-	console.log(typeof elmBucket[0].length);//undefined
+	//console.log(elmBucket[0]);
 	console.log(elmBucket.item(0));
 	let elm = elmBucket.item(0);
-	console.log(elmBucket[0]);
 	console.log(elm);
+	//next this result needs to be set as the result and pushed as string to storage.
 	console.log(elm.querySelectorAll('[jsname="UWckNb"]').item(0).getAttribute('href'));
 
 	//console.log('Logging innerChildren');
