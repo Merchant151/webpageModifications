@@ -13,7 +13,12 @@ async function main(){
 	console.log(elmBucket);/// This returns a node list 
 
 	console.log(elmBucket[0]);
-	console.log(elmBucket[].getHTML());
+	//console.log(elmBucket[0].getHTML());
+	//console.log(elmBucket[0].getHTML()[10]);//This gets string at index 10 after converting all html to string
+	//console.log(elmBucket[0].item(0));//Get htmlcollection inside of htmlcollection :)
+	//console.log(elmBucket[0].item(0).item(0));
+	//item method not working. 
+
 	//console.log('Logging innerChildren');
 	//console.log(elmBucket[0].innerHTML);
 	const resultClassElm = elmBucket[0].getElementsByClassName('LC20lb MBeuO DKV0Md');
