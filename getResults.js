@@ -34,8 +34,8 @@ async function main(){
 	//trying isnert slightyly differently using key value pair 
 	let keyR = 'keyR'+index;
 	let keyL = 'keyL'+index;
-	chrome.storage.local.set({keyR:resultText }).then(()=> {console.log("saving search results text as resl1")});
-	chrome.storage.local.set({keyL:href       }).then(()=> {console.log("saving result Link as href1")});
+	chrome.storage.local.set({[keyR]:resultText }).then(()=> {console.log("saving search results text as resl1")});
+	chrome.storage.local.set({[keyL]:href       }).then(()=> {console.log("saving result Link as href1")});
 	index = index +1;
 	};
 }
