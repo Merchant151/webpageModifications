@@ -32,7 +32,7 @@ async function read(){
 	};
 	//outside loop
 	console.log('outside loop');
-	console.log(data['test']);
+	console.log(data['keyL1']);
 	//console.log(object.Keys(data[0]));
 	//console.log(data[0]['test']);
 
