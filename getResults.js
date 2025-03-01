@@ -6,7 +6,8 @@
 async function main(){
 	await new Promise(resolve => setTimeout(resolve, 3000));
 	console.log('ran timeout  so get results starts with a delay')
-	const elmBucket = document.querySelectorAll('[jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"]');
+	const elmBucket = await document.querySelectorAll('[jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"]');
+	console.log(elmBucket);
 	let index = 0
 	//elmBucket is a set of google results 'typically ~10 per search'
 	
@@ -14,14 +15,15 @@ async function main(){
 	//console.log(elmBucket);/// This returns a node list 
 	while(index < elmBucket.length){
 	//console.log(elmBucket[0]);
-	console.log(elmBucket.item(index));
+	//console.log(elmBucket.item(index));
 	let elm = elmBucket.item(index);
-	console.log(elm);
+	//console.log(elm);
 	//next this result needs to be set as the result and pushed as string to storage.
-	console.log(elm.querySelectorAll('[jsname="UWckNb"]').item(0).getAttribute('href'));
+	//console.log(elm.querySelectorAll('[jsname="UWckNb"]').item(0).getAttribute('href'));
 	let href = elm.querySelectorAll('[jsname="UWckNb"]').item(0).getAttribute('href');
-	const resultClassElm = elmBucket[index].getElementsByClassName('LC20lb MBeuO DKV0Md');
-	const resultText = resultClassElm[0].textContent;
+	let resultClassElm = elmBucket[index].getElementsByClassName('LC20lb MBeuO DKV0Md');
+	console.log(resultClassElm);
+	let resultText = resultClassElm[0].textContent;
 	//console.log("end getresults.js");
 
 
@@ -34,8 +36,8 @@ async function main(){
 	//trying isnert slightyly differently using key value pair 
 	let keyR = 'keyR'+index;
 	let keyL = 'keyL'+index;
-	chrome.storage.local.set({[keyR]:resultText }).then(()=> {console.log("saving search results text as resl1")});
-	chrome.storage.local.set({[keyL]:href       }).then(()=> {console.log("saving result Link as href1")});
+	await chrome.storage.local.set({[keyR]:resultText }).then(()=> {console.log("saving search results text as resl1")});
+	await chrome.storage.local.set({[keyL]:href       }).then(()=> {console.log("saving result Link as href1")});
 	index = index +1;
 	};
 }
