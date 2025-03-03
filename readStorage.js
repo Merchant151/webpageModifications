@@ -1,5 +1,6 @@
 const clear = document.getElementById('clear');
-
+//gloabl elemnt for list to append links to
+const list = document.getElementById('itemList');
 clear.addEventListener('click', function() {
 
 	chrome.storage.sync.clear();
@@ -44,10 +45,15 @@ async function deletefunc(){
 
 
 //create a function 
-//document.createElement('a');
-//element.href = elm;
-//element.text = txt;
-//htmlList.appendChild()
+async function writeToScreen(txt,link){
 
+	//document.createElement('a');
+	let item = document.createElement('a');
+	//element.href = elm;
+	item.href = link;
+	//element.text = txt;
+	item.text = txt;
+	//list.appendChild(item)
+};
 //main calls below funcs above
 read();
