@@ -43,5 +43,11 @@ async function deletefunc(){
 };
 
 
+//create a function 
+//document.createElement('a');
+//element.href = elm;
+//element.text = txt;
+//htmlList.appendChild()
+
 //main calls below funcs above
 read();
