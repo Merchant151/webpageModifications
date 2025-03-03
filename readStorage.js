@@ -1,6 +1,6 @@
 const clear = document.getElementById('clear');
 //gloabl elemnt for list to append links to
-const list = document.getElementById('itemList');
+const list = document.getElementById('list');
 clear.addEventListener('click', function() {
 
 	chrome.storage.sync.clear();
@@ -8,13 +8,13 @@ clear.addEventListener('click', function() {
 	read();
 	});
 
-
+//data stored under keys named keyL1 KeyR1 
 async function read(){
 	let data = await chrome.storage.local.get(null);
 	data_keys = Object.keys(data);
 	console.log(data_keys);
 	 //data = [1,2,3];
-	
+		
 	for (var store = 0;store < data_keys.length;store++){
 		console.log('item: '+store);
 		//I guess local storage only stores strings so this object has to be parsed as json 
@@ -36,6 +36,9 @@ async function read(){
 	console.log(data['keyL1']);
 	//console.log(object.Keys(data[0]));
 	//console.log(data[0]['test']);
+	let text = await data['keyR1'];
+	let link = await data['keyL1'];
+	writeToScreen(text,link);
 
 };
 
@@ -46,7 +49,7 @@ async function deletefunc(){
 
 //create a function 
 async function writeToScreen(txt,link){
-
+	let listitem = document.createElement('li');
 	//document.createElement('a');
 	let item = document.createElement('a');
 	//element.href = elm;
@@ -54,6 +57,8 @@ async function writeToScreen(txt,link){
 	//element.text = txt;
 	item.text = txt;
 	//list.appendChild(item)
+	listitem.appendChild(item);
+	list.appendChild(listitem);
 };
 //main calls below funcs above
 read();
