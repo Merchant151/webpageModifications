@@ -30,15 +30,15 @@ async function read(){
 		//console.log(data[0])
 		//console.log(JSON.parse(data[store]));
 
+		//console.log('outside loop');
+		//console.log(data['keyL1']);
+		let text = await data['keyR'+store];
+		let link = await data['keyL'+store];
+		console.log(link);
+		if (link !== undefined){
+		writeToScreen(text,link);}
+	
 	};
-	//outside loop
-	console.log('outside loop');
-	console.log(data['keyL1']);
-	//console.log(object.Keys(data[0]));
-	//console.log(data[0]['test']);
-	let text = await data['keyR1'];
-	let link = await data['keyL1'];
-	writeToScreen(text,link);
 
 };
 
