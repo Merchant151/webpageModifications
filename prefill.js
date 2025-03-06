@@ -21,6 +21,8 @@ console.log('ending prefill.js');
 
 
 //trying to submit
+//htmlCollection.form will return form that is a parent of the element and 
+//.submit will submit that form. .click() can be used for buttons
 function submit(){
 	console.log('testing prefill submit');
 	elemlist[0].form.submit();
