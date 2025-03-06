@@ -18,3 +18,12 @@ console.log(elemlist);
 elemlist[0].value = 'Test autofill';
 
 console.log('ending prefill.js');
+
+
+//trying to submit
+function submit(){
+	console.log('testing prefill submit');
+	elemlist[0].form.submit();
+};
+//please comment this out when not testing lol
+submit();
