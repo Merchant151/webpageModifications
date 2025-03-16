@@ -8,8 +8,21 @@
 //grab buttons 
 //TODO: I would like to change this to be done by looping 
 //over a list of elements instead
-const scriptsToggles = document.getElementById('toggle');
+const scriptToggles = document.getElementById('toggle');
 
+//scriptToggles.click();
+async function updateScriptState(){
+	//when script state is null we need to set the script to active or inactive
+	let scriptState = await chrome.storage.local.get(["script1"]);
+	console.log("Script state: "+ scriptState.key);
+	if ("undefined"==""+scriptState.key){
+		chrome.storage.local.set({script1: "active"});	
+		scriptToggles.click();
+	}else if ("active" == scriptState.key){
+		scriptToggles.click();
+	}
+};
+updateScriptState();
 //main sets tickbox from storage 
 //run main 
 //
@@ -21,4 +34,4 @@ scriptToggles.addEventListener('click', function() {
 	//chrome.storage.local.set();
 	console.log('toggle triggered');
 
-};);
+});
