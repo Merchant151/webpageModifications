@@ -28,9 +28,18 @@ updateScriptState();
 //
 //
 //listner sets script based on button id 
-scriptToggles.addEventListener('click', function() {
-
-	//update crome store based on sleection/
+scriptToggles.addEventListener('click', async function() {
+	console.log('test setting state to storage')
+	let scriptState = await chrome.storage.local.get([script1]);
+	console.log(""+scriptState.key)
+	if ("active" == scriptState.key){
+		console.log("inactive triggered")
+		chrome.storage.local.set({script1: "inactive"});
+	}else{
+		console.log("active triggered")
+		chrome.storage.local.set({script1:"active"});
+	}
+	//update crome store based on selection/
 	//chrome.storage.local.set();
 	console.log('toggle triggered');
 
