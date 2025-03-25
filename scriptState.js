@@ -13,18 +13,21 @@ let startup = true;
 
 //scriptToggles.click();
 async function updateScriptState(){
+	setTimeout(async function () {
 	//when script state is null we need to set the script to active or inactive
 	let scriptState = await chrome.storage.local.get("script1");
 	console.log("Script state: "+ scriptState.script1);
 	if ("undefined"==""+scriptState.script1){
 		chrome.storage.local.set({script1: "active"});	
 		await scriptToggles.click();
-	}else if ("active" == scriptState.key){
-		await scriptToggles.click();
+	}else if ("active" == scriptState.script1){
+		console.log("because active trigger")
+		scriptToggles.click();
 	}
 	startup = false;
+	}, "1000");
 };
-updateScriptState();
+//updateScriptState();
 //main sets tickbox from storage 
 //run main 
 //
@@ -50,3 +53,5 @@ scriptToggles.addEventListener('click', async function() {
 	console.log('toggle triggered');
 
 });
+
+updateScriptState();
