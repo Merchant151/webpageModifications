@@ -13,6 +13,7 @@ let startup = true;
 
 //scriptToggles.click();
 async function updateScriptState(){
+	console.log 
 	setTimeout(async function () {
 	//when script state is null we need to set the script to active or inactive
 	let scriptState = await chrome.storage.local.get("script1");
@@ -22,10 +23,13 @@ async function updateScriptState(){
 		await scriptToggles.click();
 	}else if ("active" == scriptState.script1){
 		console.log("because active trigger")
-		scriptToggles.click();
+		await scriptToggles.click();
+	}else{
+		startup = false;
 	}
-	startup = false;
-	}, "1000");
+	//console.log("deactivate startup hold")	
+	//startup = false;
+	}, "100");
 };
 //updateScriptState();
 //main sets tickbox from storage 
@@ -36,7 +40,8 @@ async function updateScriptState(){
 scriptToggles.addEventListener('click', async function() {
 	console.log('test setting state to storage')
 	let scriptState = await chrome.storage.local.get("script1");
-	console.log(""+scriptState.script1)
+	console.log(""+scriptState.script1);
+	console.log("startup state at: "+startup);
 	if (!startup){
 	if ("active" == scriptState.script1){
 		console.log("inactive triggered")
@@ -46,7 +51,8 @@ scriptToggles.addEventListener('click', async function() {
 		chrome.storage.local.set({script1:"active"});
 	}
 	}else{
-	console.log('startup true')
+		console.log('startup triggered')
+		startup = false;
 	}
 	//update crome store based on selection/
 	//chrome.storage.local.set();
