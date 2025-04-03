@@ -14,12 +14,19 @@ console.log(elemlist[1]);
 console.log(elemlist);
 
 //attempt to set a value./....
-//
-elemlist[0].value = 'Test autofill';
+//moved to run prefill
+//elemlist[0].value = 'Test autofill';
 
-console.log('ending prefill.js');
+//console.log('ending prefill.js');
 
-
+async function runPrefill(){
+	//run only if script state is active
+	let active = await chrome.storage.local.get("script1");
+	if("active"== active.script1){
+		elemlist[0].value = 'Test autofill';
+		submit();
+	}
+};
 //trying to submit
 //htmlCollection.form will return form that is a parent of the element and 
 //.submit will submit that form. .click() can be used for buttons
@@ -27,5 +34,5 @@ function submit(){
 	console.log('testing prefill submit');
 	elemlist[0].form.submit();
 };
-//please comment this out when not testing lol
-submit();
+runPrefill();
+
