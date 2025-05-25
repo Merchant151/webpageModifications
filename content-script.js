@@ -11,6 +11,7 @@ async function testlog(){
 }
 console.log('Content-scripts.js starts here! ELEM TEST');
 testlog();
+async function main(){
 // Create a button element
 const button = document.createElement("button");
 
@@ -43,3 +44,16 @@ const insertElement = document.createElement('p');
 insertElement.textContent = "This text was inserted to the page"
 document.body.appendChild(insertElement);
 //document.body.getElementsByTagName("*")[8].appendChild(insertElement);
+}
+
+async function runMain(){
+	let active = await chrome.storage.local.get("script1");
+	if ("active" == active.script1){
+		console.log('insert will be attempted')
+		main();
+	}
+	else{
+		console.log('autofill skipped')
+	}
+}
+
