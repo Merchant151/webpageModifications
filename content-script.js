@@ -6,7 +6,8 @@ async function testlog(){
 		console.log('heartbeat');
 		await new Promise(resolve => setTimeout(resolve, 12000));
 		//move single elem arround 
-		document.body.getElementsByTagName("*")[8].appendChild(insertElement);
+		//not sure why this line is here its thowing an error
+		//document.body.getElementsByTagName("*")[8].appendChild(insertElement);
 	}
 }
 console.log('Content-scripts.js starts here! ELEM TEST');
@@ -56,4 +57,6 @@ async function runMain(){
 		console.log('autofill skipped')
 	}
 }
+
+runMain();
 
